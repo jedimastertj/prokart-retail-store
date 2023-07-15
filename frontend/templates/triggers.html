@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %} Triggers {% endblock %}
+
+{% block content %}
+    <h1>Triggers testing</h1> <br>
+
+    <h4>Here are the 10 latest payments:</h4> <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Payment ID</th>
+            <th>Amount</th>
+            <th>User ID</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in data1 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> <br>
+
+    <h4>Here are the 10 latest order details:</h4> <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Order date</th>
+            <th>User ID</th>
+            <th>Payment ID</th>
+            <th>Courier ID</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in data2 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> <br>
+
+    <h4>Here are the 10 latest product-order mappings:</h4> <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Product ID</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in data3 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> <br>
+{% endblock %}

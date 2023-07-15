@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    <h1>Welcome, {{ fname }}!</h1> <br>
+
+    <h4>Here, are the products in your cart:</h4> <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product name</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> <br>
+
+    <form method="POST">
+        <button type="submit" class="btn btn-primary">Make payment (test triggers)</button>
+    </form>
+{% endblock %}

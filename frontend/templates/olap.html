@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %} OLAP {% endblock %}
+
+{% block content %}
+    <h1>OLAP queries</h1> <br>
+
+    <h4>Analysis of quantity of products sold for different categories and price ranges:</h4> <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Price range</th>
+            <th>Total quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in data1 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> <br>
+
+    <h4>Analysis of revenues of different sellers for each category:</h4> <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Seller name</th>
+            <th>Category name</th>
+            <th>Total revenue</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in data2 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> <br>
+
+    <h4>Analysis of amount spent by different users in 1st and 2nd half of 2022:</h4> <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>User name</th>
+            <th>Time period</th>
+            <th>Total amount</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in data3 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> <br>
+
+    <h4>Analysis of courier reliability</h4> <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Courier name</th>
+            <th>Total amount of orders delivered</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in data4 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> <br>
+{% endblock %}
